@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ats.ContinuousImprovement.DAL.Models;
 using OfficeOpenXml;
 
@@ -14,11 +10,16 @@ namespace Ats.ContinuousImprovement.ImportTool.Helpers
         {
             var doc = new CIDocument
             {
-                CIProjectId = (int)worksheet.Cells[row.Row, 1].Value,
-                SiteProjectAppliesTo = (int)worksheet.Cells[row.Row, 2].Value,
+                CIProjectId = worksheet.Cells[row.Row, 1].Value.ToInt(),
+                SiteProjectAppliesTo = worksheet.Cells[row.Row, 2].Value.ToInt(),
             };
             
             return doc;
+        }
+
+        private static int ToInt(this object value)
+        {
+            return Convert.ToInt32(value);
         }
     }
 }

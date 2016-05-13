@@ -67,6 +67,22 @@
     <Compile Include="Migrations\201605091839458_Initial.Designer.cs">
       <DependentUpon>201605091839458_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605131853086_v1.cs" />
+    <Compile Include="Migrations\201605131853086_v1.Designer.cs">
+      <DependentUpon>201605131853086_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605131918467_v2.cs" />
+    <Compile Include="Migrations\201605131918467_v2.Designer.cs">
+      <DependentUpon>201605131918467_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605131925108_v3.cs" />
+    <Compile Include="Migrations\201605131925108_v3.Designer.cs">
+      <DependentUpon>201605131925108_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605131949504_v4.cs" />
+    <Compile Include="Migrations\201605131949504_v4.Designer.cs">
+      <DependentUpon>201605131949504_v4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CIDocument.cs" />
     <Compile Include="DataModel\CIContext.cs" />
@@ -85,6 +101,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605091839458_Initial.resx">
       <DependentUpon>201605091839458_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605131853086_v1.resx">
+      <DependentUpon>201605131853086_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605131918467_v2.resx">
+      <DependentUpon>201605131918467_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605131925108_v3.resx">
+      <DependentUpon>201605131925108_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605131949504_v4.resx">
+      <DependentUpon>201605131949504_v4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

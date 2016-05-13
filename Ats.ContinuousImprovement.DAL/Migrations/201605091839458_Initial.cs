@@ -11,8 +11,7 @@ namespace Ats.ContinuousImprovement.DAL.Migrations
                 "dbo.CIDocuments",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        CIProjectId = c.Int(nullable: false),
+                        CIProjectId = c.Int(nullable: false, identity: true),
                         SiteProjectAppliesTo = c.Int(nullable: false),
                         SiteName = c.String(),
                         Name = c.String(),
@@ -98,7 +97,7 @@ namespace Ats.ContinuousImprovement.DAL.Migrations
                         YearTwoQuarterThree = c.String(),
                         YearTwoQuarterFour = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.CIProjectId);
             
         }
         

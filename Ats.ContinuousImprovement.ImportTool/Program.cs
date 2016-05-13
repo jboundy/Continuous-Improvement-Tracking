@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ats.ContinuousImprovement.DAL.DataModel;
-using Ats.ContinuousImprovement.DAL.Models;
 using Ats.ContinuousImprovement.ImportTool.Helpers;
-using Ats.ContinuousImprovement.ImportTool.Profiles;
-using AutoMapper;
-using OfficeOpenXml;
 
 namespace Ats.ContinuousImprovement.ImportTool
 {
@@ -31,7 +22,6 @@ namespace Ats.ContinuousImprovement.ImportTool
                 context.CiDocuments.AddRange(import);
                 context.SaveChanges();
             }
-
         }
     }
 }

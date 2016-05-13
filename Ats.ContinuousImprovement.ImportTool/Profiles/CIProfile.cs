@@ -14,8 +14,6 @@ namespace Ats.ContinuousImprovement.ImportTool.Profiles
         protected override void Configure()
         {
             CreateMap<ExcelRange, CIDocument>();
-
-
         }
     }
 }
