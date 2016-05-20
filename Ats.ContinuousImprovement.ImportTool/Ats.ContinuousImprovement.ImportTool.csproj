@@ -60,9 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\CIDocumentHelpers.cs" />
+    <Compile Include="Models\ExcelModel.cs" />
     <Compile Include="Helpers\ExcelHelpers.cs" />
-    <Compile Include="Profiles\CIProfile.cs" />
+    <Compile Include="Helpers\GenericHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,12 +71,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ats.ContinuousImprovement.BLL\Ats.ContinuousImprovement.BLL.csproj">
+      <Project>{F7966472-4F26-402B-B4FD-4E7C3FDC0000}</Project>
+      <Name>Ats.ContinuousImprovement.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ats.ContinuousImprovement.DAL\Ats.ContinuousImprovement.DAL.csproj">
       <Project>{4dd1a6ee-38a2-4963-868a-574fb8d000fc}</Project>
       <Name>Ats.ContinuousImprovement.DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Profiles\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

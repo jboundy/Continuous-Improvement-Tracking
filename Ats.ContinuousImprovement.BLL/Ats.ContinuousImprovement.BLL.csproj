@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\ExcelHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AtsTypeBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ats.ContinuousImprovement.DAL\Ats.ContinuousImprovement.DAL.csproj">
