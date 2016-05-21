@@ -6,12 +6,12 @@ using ETL.ExcelToSql.DAL.Models;
 
 namespace ETL.ExcelToSql.BLL
 {
-    public class AtsTypeBuilder
+    public class EtlTypeBuilder
     {
         private static string _assemblyName;
         private static string _mainModule;
 
-        public AtsTypeBuilder(string assemblyName, string mainModule)
+        public EtlTypeBuilder(string assemblyName, string mainModule)
         {
             _assemblyName = assemblyName;
             _mainModule = mainModule;

@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AtsTypeBuilder.cs" />
+    <Compile Include="EtlTypeBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ats.ContinuousImprovement.DAL\ETL.ExcelToSql.DAL.csproj">

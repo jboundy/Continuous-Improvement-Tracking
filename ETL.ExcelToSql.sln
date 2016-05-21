@@ -3,19 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.DAL", "Ats.ContinuousImprovement.DAL\ETL.ExcelToSql.DAL.csproj", "{4DD1A6EE-38A2-4963-868A-574FB8D000FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.BLL", "Ats.ContinuousImprovement.BLL\ETL.ExcelToSql.BLL.csproj", "{F7966472-4F26-402B-B4FD-4E7C3FDC0000}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4DD1A6EE-38A2-4963-868A-574FB8D000FC} = {4DD1A6EE-38A2-4963-868A-574FB8D000FC}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.ImportTool", "Ats.ContinuousImprovement.ImportTool\ETL.ExcelToSql.ImportTool.csproj", "{AC37B146-0116-4419-AFE5-A641B5CC698A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D6477B9-7DDB-45A0-A3BC-DAC7CB88192B}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.BLL", "ETL.ExcelToSql.BLL\ETL.ExcelToSql.BLL.csproj", "{F7966472-4F26-402B-B4FD-4E7C3FDC0000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.DAL", "ETL.ExcelToSql.DAL\ETL.ExcelToSql.DAL.csproj", "{4DD1A6EE-38A2-4963-868A-574FB8D000FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.ImportTool", "ETL.ExcelToSql.ImportTool\ETL.ExcelToSql.ImportTool.csproj", "{AC37B146-0116-4419-AFE5-A641B5CC698A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +20,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F7966472-4F26-402B-B4FD-4E7C3FDC0000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F7966472-4F26-402B-B4FD-4E7C3FDC0000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7966472-4F26-402B-B4FD-4E7C3FDC0000}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7966472-4F26-402B-B4FD-4E7C3FDC0000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC37B146-0116-4419-AFE5-A641B5CC698A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC37B146-0116-4419-AFE5-A641B5CC698A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC37B146-0116-4419-AFE5-A641B5CC698A}.Release|Any CPU.ActiveCfg = Release|Any CPU

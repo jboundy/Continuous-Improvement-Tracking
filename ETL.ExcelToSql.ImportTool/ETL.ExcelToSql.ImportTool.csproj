@@ -72,11 +72,11 @@
     <None Include="TestData\test.xlsx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ats.ContinuousImprovement.BLL\ETL.ExcelToSql.BLL.csproj">
+    <ProjectReference Include="..\ETL.ExcelToSql.BLL\ETL.ExcelToSql.BLL.csproj">
       <Project>{F7966472-4F26-402B-B4FD-4E7C3FDC0000}</Project>
       <Name>ETL.ExcelToSql.BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ats.ContinuousImprovement.DAL\ETL.ExcelToSql.DAL.csproj">
+    <ProjectReference Include="..\ETL.ExcelToSql.DAL\ETL.ExcelToSql.DAL.csproj">
       <Project>{4dd1a6ee-38a2-4963-868a-574fb8d000fc}</Project>
       <Name>ETL.ExcelToSql.DAL</Name>
     </ProjectReference>

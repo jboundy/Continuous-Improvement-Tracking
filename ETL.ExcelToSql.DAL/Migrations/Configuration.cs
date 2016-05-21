@@ -1,6 +1,5 @@
 using System.Data.Entity.Migrations;
 using ETL.ExcelToSql.DAL.DataModel;
-using ETL.ExcelToSql.DAL.Models;
 
 namespace ETL.ExcelToSql.DAL.Migrations
 {
