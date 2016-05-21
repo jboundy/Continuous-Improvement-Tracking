@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ats.ContinuousImprovement.DAL.Models;
-
-namespace Ats.ContinuousImprovement.ImportTool
+﻿namespace ETL.ExcelToSql.ImportTool.Models
 {
     public class ExcelModel
     {

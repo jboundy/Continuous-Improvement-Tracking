@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ats.ContinuousImprovement.DAL.Models;
+﻿using System.Data.Entity;
+using ETL.ExcelToSql.DAL.Models;
 
-namespace Ats.ContinuousImprovement.DAL.DataModel
+namespace ETL.ExcelToSql.DAL.DataModel
 {
     public class DynamicContext : DbContext
     {

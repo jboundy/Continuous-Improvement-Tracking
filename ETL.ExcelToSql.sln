@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ats.ContinuousImprovement.DAL", "Ats.ContinuousImprovement.DAL\Ats.ContinuousImprovement.DAL.csproj", "{4DD1A6EE-38A2-4963-868A-574FB8D000FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.DAL", "Ats.ContinuousImprovement.DAL\ETL.ExcelToSql.DAL.csproj", "{4DD1A6EE-38A2-4963-868A-574FB8D000FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ats.ContinuousImprovement.BLL", "Ats.ContinuousImprovement.BLL\Ats.ContinuousImprovement.BLL.csproj", "{F7966472-4F26-402B-B4FD-4E7C3FDC0000}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.BLL", "Ats.ContinuousImprovement.BLL\ETL.ExcelToSql.BLL.csproj", "{F7966472-4F26-402B-B4FD-4E7C3FDC0000}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4DD1A6EE-38A2-4963-868A-574FB8D000FC} = {4DD1A6EE-38A2-4963-868A-574FB8D000FC}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ats.ContinuousImprovement.ImportTool", "Ats.ContinuousImprovement.ImportTool\Ats.ContinuousImprovement.ImportTool.csproj", "{AC37B146-0116-4419-AFE5-A641B5CC698A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.ImportTool", "Ats.ContinuousImprovement.ImportTool\ETL.ExcelToSql.ImportTool.csproj", "{AC37B146-0116-4419-AFE5-A641B5CC698A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

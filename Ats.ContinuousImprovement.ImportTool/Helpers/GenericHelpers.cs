@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ats.ContinuousImprovement.DAL.Models;
+using ETL.ExcelToSql.DAL.Models;
 using OfficeOpenXml;
-using OfficeOpenXml.FormulaParsing.Excel.Functions.Text;
 
-namespace Ats.ContinuousImprovement.ImportTool.Helpers
+namespace ETL.ExcelToSql.ImportTool.Helpers
 {
     public static class GenericHelpers
     {

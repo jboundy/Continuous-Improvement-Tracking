@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Data.Entity;
-using Ats.ContinuousImprovement.BLL;
-using Ats.ContinuousImprovement.DAL.Models;
-using Ats.ContinuousImprovement.ImportTool.Helpers;
+using ETL.ExcelToSql.DAL.Models;
+using ETL.ExcelToSql.ImportTool.Helpers;
 
-namespace Ats.ContinuousImprovement.ImportTool
+namespace ETL.ExcelToSql.ImportTool
 {
     class Program
     {

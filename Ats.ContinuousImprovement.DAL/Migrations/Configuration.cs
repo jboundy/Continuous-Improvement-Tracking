@@ -1,18 +1,17 @@
-namespace Ats.ContinuousImprovement.DAL.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
+using ETL.ExcelToSql.DAL.DataModel;
+using ETL.ExcelToSql.DAL.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Ats.ContinuousImprovement.DAL.DataModel.CIContext>
+namespace ETL.ExcelToSql.DAL.Migrations
+{
+    internal class Configuration : DbMigrationsConfiguration<DynamicContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Ats.ContinuousImprovement.DAL.DataModel.CIContext context)
+        protected override void Seed(DynamicContext context)
         {
             //  This method will be called after migrating to the latest version.
 

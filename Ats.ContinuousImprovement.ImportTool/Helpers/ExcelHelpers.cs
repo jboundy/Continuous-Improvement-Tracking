@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using ETL.ExcelToSql.ImportTool.Models;
 using OfficeOpenXml;
 
-namespace Ats.ContinuousImprovement.ImportTool.Helpers
+namespace ETL.ExcelToSql.ImportTool.Helpers
 {
     public class ExcelHelpers : IDisposable
     {
