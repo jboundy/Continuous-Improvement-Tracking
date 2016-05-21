@@ -69,7 +69,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="TestData\test.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ETL.ExcelToSql.BLL\ETL.ExcelToSql.BLL.csproj">
@@ -77,7 +76,7 @@
       <Name>ETL.ExcelToSql.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETL.ExcelToSql.DAL\ETL.ExcelToSql.DAL.csproj">
-      <Project>{4dd1a6ee-38a2-4963-868a-574fb8d000fc}</Project>
+      <Project>{4DD1A6EE-38A2-4963-868A-574FB8D000FC}</Project>
       <Name>ETL.ExcelToSql.DAL</Name>
     </ProjectReference>
   </ItemGroup>

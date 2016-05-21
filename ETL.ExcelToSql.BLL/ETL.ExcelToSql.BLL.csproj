@@ -44,8 +44,8 @@
     <Compile Include="EtlTypeBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ats.ContinuousImprovement.DAL\ETL.ExcelToSql.DAL.csproj">
-      <Project>{4dd1a6ee-38a2-4963-868a-574fb8d000fc}</Project>
+    <ProjectReference Include="..\ETL.ExcelToSql.DAL\ETL.ExcelToSql.DAL.csproj">
+      <Project>{4DD1A6EE-38A2-4963-868A-574FB8D000FC}</Project>
       <Name>ETL.ExcelToSql.DAL</Name>
     </ProjectReference>
   </ItemGroup>
