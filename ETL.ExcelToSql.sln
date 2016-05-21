@@ -12,6 +12,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.BLL", "Ats.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.ImportTool", "Ats.ContinuousImprovement.ImportTool\ETL.ExcelToSql.ImportTool.csproj", "{AC37B146-0116-4419-AFE5-A641B5CC698A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D6477B9-7DDB-45A0-A3BC-DAC7CB88192B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

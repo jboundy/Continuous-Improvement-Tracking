@@ -19,12 +19,14 @@ namespace ETL.ExcelToSql.ImportTool.Helpers
             ep.Load(_stream);
             _excelWorksheets = ep.Workbook.Worksheets;
         }
+
+        //todo need to write implementation
         public List<ExcelModel> GetHeadersFromExcel()
         {
             List<ExcelModel> list = new List<ExcelModel>();
             var data = ConvertToDataTables(_excelWorksheets);
 
-            
+            return list;
         }
 
         private static IEnumerable<DataTable> ConvertToDataTables(ExcelWorksheets worksheets)
