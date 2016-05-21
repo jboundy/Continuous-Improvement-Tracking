@@ -18,5 +18,5 @@ Once the excel file is loaded into the application, the solution needs to read a
 #### Things to consider ####
 1. Develop a more friendly interface
 2. Add more tests to the project and code coverage
-	- Setup mocks and as well as integrations
+	- Setup mocks and integrations
 3. Allow the user to choose their own data connector
