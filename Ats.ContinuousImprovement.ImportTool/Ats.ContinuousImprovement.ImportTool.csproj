@@ -69,6 +69,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="TestData\test.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ats.ContinuousImprovement.BLL\Ats.ContinuousImprovement.BLL.csproj">
