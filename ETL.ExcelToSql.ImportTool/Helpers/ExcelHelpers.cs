@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
+using System.Linq;
 using ETL.ExcelToSql.ImportTool.Models;
 using OfficeOpenXml;
 
@@ -20,12 +21,23 @@ namespace ETL.ExcelToSql.ImportTool.Helpers
             _excelWorksheets = ep.Workbook.Worksheets;
         }
 
-        //todo need to write implementation
         public List<ExcelModel> GetHeadersFromExcel()
         {
             List<ExcelModel> list = new List<ExcelModel>();
             var data = ConvertToDataTables(_excelWorksheets);
-
+            foreach (var col in data)
+            {
+                var model = new ExcelModel
+                {
+                    Header = new object[col.Columns.Count]
+                };
+                for (int i = 0; i < col.Columns.Count; i++)
+                {
+                    model.Header[i] = col.Columns[i].ColumnName;
+                    model.Worksheet = col.TableName;
+                }
+                list.Add(model);
+            }
             return list;
         }
 

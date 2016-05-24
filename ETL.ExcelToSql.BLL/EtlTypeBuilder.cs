@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -11,13 +12,29 @@ namespace ETL.ExcelToSql.BLL
         private static string _assemblyName;
         private static string _mainModule;
 
-        public EtlTypeBuilder(string assemblyName, string mainModule)
+        public EtlTypeBuilder(string assemblyName, string mainModule,)
         {
             _assemblyName = assemblyName;
             _mainModule = mainModule;
+            //MapToDynamicModels(collection);
             //CreateNewObject();
         }
 
+        //private static IEnumerable<DynamicModel> MapToDynamicModels(IEnumerable<ExcelModel> collection)
+        //{
+        //    List<DynamicModel> list = new List<DynamicModel>();
+        //    foreach (var item in collection)
+        //    {
+        //        DynamicModel dm = new DynamicModel()
+        //        {
+        //            FieldName = item.Header
+        //        }
+        //    }
+
+        //    return list;
+        //}
+
+        //need to write tests to and mock out classes
         private static void CreateNewObject(List<DynamicModel> fields)
         {
             var modelType = CompileResultType(fields, _assemblyName, _mainModule);

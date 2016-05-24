@@ -3,7 +3,7 @@ using ETL.ExcelToSql.DAL.DataModel;
 
 namespace ETL.ExcelToSql.DAL.Migrations
 {
-    internal class Configuration : DbMigrationsConfiguration<DynamicContext>
+    public class Configuration : DbMigrationsConfiguration<DynamicContext>
     {
         public Configuration()
         {
