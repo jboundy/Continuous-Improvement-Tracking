@@ -19,22 +19,8 @@ namespace ETL.ExcelToSql.BLL
             //CreateNewClass();
         }
 
-        //
-        public void CreateNewClass(List<DynamicModel> fields)
-        //    List<DynamicModel> list = new List<DynamicModel>();
-        //    foreach (var item in collection)
-        //    {
-        //        DynamicModel dm = new DynamicModel()
-        //        {
-        //            FieldName = item.Header
-        //        }
-        //    }
-
-        //    return list;
-        //}
-
-        //need to write tests to and mock out classes
-        private static void CreateNewObject(List<DynamicModel> fields)
+       //need to write tests to and mock out classes
+        private void CreateNewObject(List<DynamicModel> fields)
         {
             var modelType = CompileResultType(fields);
             Activator.CreateInstance(modelType);

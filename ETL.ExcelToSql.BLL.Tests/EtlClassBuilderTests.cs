@@ -42,7 +42,7 @@ namespace ETL.ExcelToSql.BLL.Tests
 
         #endregion
 
-#region CreateProperty
+        #region CreateProperty
         [TestMethod]
 
         public void CanCreatePropertyStub()
