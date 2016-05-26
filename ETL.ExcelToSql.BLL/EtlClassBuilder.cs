@@ -7,21 +7,20 @@ using ETL.ExcelToSql.DAL.Models;
 
 namespace ETL.ExcelToSql.BLL
 {
-    public class EtlTypeBuilder
+    public class EtlClassBuilder
     {
         private static string _assemblyName;
         private static string _mainModule;
 
-        public EtlTypeBuilder(string assemblyName, string mainModule,)
+        public EtlClassBuilder(string assemblyName, string mainModule)
         {
             _assemblyName = assemblyName;
             _mainModule = mainModule;
-            //MapToDynamicModels(collection);
-            //CreateNewObject();
+            //CreateNewClass();
         }
 
-        //private static IEnumerable<DynamicModel> MapToDynamicModels(IEnumerable<ExcelModel> collection)
-        //{
+        //
+        public void CreateNewClass(List<DynamicModel> fields)
         //    List<DynamicModel> list = new List<DynamicModel>();
         //    foreach (var item in collection)
         //    {
@@ -37,13 +36,13 @@ namespace ETL.ExcelToSql.BLL
         //need to write tests to and mock out classes
         private static void CreateNewObject(List<DynamicModel> fields)
         {
-            var modelType = CompileResultType(fields, _assemblyName, _mainModule);
+            var modelType = CompileResultType(fields);
             Activator.CreateInstance(modelType);
         }
 
-        private static Type CompileResultType(List<DynamicModel> fields, string assemblyName, string mainModule)
+        public Type CompileResultType(List<DynamicModel> fields)
         {
-            TypeBuilder tb = GetTypeBuilder(assemblyName, mainModule);
+            TypeBuilder tb = GetTypeBuilder();
 
             tb.DefineDefaultConstructor(MethodAttributes.Public | MethodAttributes.SpecialName |
                                             MethodAttributes.RTSpecialName);
@@ -56,22 +55,22 @@ namespace ETL.ExcelToSql.BLL
             return objecType;
         }
 
-        private static TypeBuilder GetTypeBuilder(string assemblyName, string mainModule)
+        public TypeBuilder GetTypeBuilder()
         {
-            var assemblyN = new AssemblyName(assemblyName);
+            var assemblyN = new AssemblyName(_assemblyName);
             AssemblyBuilder assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(assemblyN,
                 AssemblyBuilderAccess.Run);
-            ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule(mainModule);
-            TypeBuilder tb = moduleBuilder.DefineType(assemblyName,
+            ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule(_mainModule);
+            TypeBuilder tb = moduleBuilder.DefineType(_assemblyName,
                 TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.AutoClass | TypeAttributes.AnsiClass |
                 TypeAttributes.BeforeFieldInit | TypeAttributes.AutoLayout, null);
 
             return tb;
         }
 
-        private static void CreateProperty(TypeBuilder tb, string propertyName, Type propertyType)
+        public void CreateProperty(TypeBuilder tb, string propertyName, Type propertyType)
         {
-            FieldBuilder fb = tb.DefineField("" + propertyName, propertyType, FieldAttributes.Public);
+            FieldBuilder fb = tb.DefineField(propertyName, propertyType, FieldAttributes.Public);
             PropertyBuilder propertyBuilder = tb.DefineProperty(propertyName, PropertyAttributes.HasDefault,
                 propertyType, null);
             MethodBuilder getPropertyMethodBuilder = tb.DefineMethod("get_" + propertyName,

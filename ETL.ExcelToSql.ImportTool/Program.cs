@@ -18,6 +18,7 @@ namespace ETL.ExcelToSql.ImportTool
             Console.WriteLine("Enter the name for the database (Note: it will render as dbo.tablename");
             var databaseName = Console.ReadLine();
             var excelHelper = new ExcelHelpers(input);
+            //grab headers from excel
             var excelObjects = excelHelper.GetHeadersFromExcel();        
             //use headers to create the custom concrete type using the dynamic model with private properties
 
@@ -26,7 +27,7 @@ namespace ETL.ExcelToSql.ImportTool
             {
                 if (!Database.Exists(databaseName))
                 {
-                    var entityObject = new EtlTypeBuilder(exObj.Worksheet, "value");
+                //    var atsObject = new EtlTypeBuilder(exObj.WorkSheet, exObj.ColumnName);
                 }
             }
             //create database from class object

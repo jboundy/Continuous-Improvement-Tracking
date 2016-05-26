@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.ImportTool",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.DAL", "ETL.ExcelToSql.DAL\ETL.ExcelToSql.DAL.csproj", "{4DD1A6EE-38A2-4963-868A-574FB8D000FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.BLL.Tests", "ETL.ExcelToSql.BLL.Tests\ETL.ExcelToSql.BLL.Tests.csproj", "{90FE76D7-2B2C-4167-926B-222B5CA73CEF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AB663C27-F17F-4963-83D2-0AA7DA5D7738}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_tests", "_tests", "{13DCB6D5-EDB7-4658-8D7E-4E78D111FF6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.ExcelToSql.BLL.Tests", "ETL.ExcelToSql.BLL.Tests\ETL.ExcelToSql.BLL.Tests.csproj", "{1E5B6526-CD7E-4F0F-ACBF-2244819D0CB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,15 +37,15 @@ Global
 		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD1A6EE-38A2-4963-868A-574FB8D000FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90FE76D7-2B2C-4167-926B-222B5CA73CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90FE76D7-2B2C-4167-926B-222B5CA73CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90FE76D7-2B2C-4167-926B-222B5CA73CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90FE76D7-2B2C-4167-926B-222B5CA73CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E5B6526-CD7E-4F0F-ACBF-2244819D0CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E5B6526-CD7E-4F0F-ACBF-2244819D0CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E5B6526-CD7E-4F0F-ACBF-2244819D0CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E5B6526-CD7E-4F0F-ACBF-2244819D0CB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{90FE76D7-2B2C-4167-926B-222B5CA73CEF} = {13DCB6D5-EDB7-4658-8D7E-4E78D111FF6C}
+		{1E5B6526-CD7E-4F0F-ACBF-2244819D0CB4} = {AB663C27-F17F-4963-83D2-0AA7DA5D7738}
 	EndGlobalSection
 EndGlobal
