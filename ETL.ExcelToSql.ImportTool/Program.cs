@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.Migrations.Infrastructure;
@@ -19,17 +20,14 @@ namespace ETL.ExcelToSql.ImportTool
             var databaseName = Console.ReadLine();
             var excelHelper = new ExcelHelpers(input);
             //grab headers from excel
-            var excelObjects = excelHelper.GetHeadersFromExcel();        
+            var excelObjects = excelHelper.GetHeadersFromExcel();
+            var dictionaryObjects = excelHelper.GetTypesFromExcel(excelObjects);
+            var mapTypes = excelHelper.MapToDynamicModels(dictionaryObjects);
+
             //use headers to create the custom concrete type using the dynamic model with private properties
 
             //use headers to create a class object
-            foreach (var exObj in excelObjects)
-            {
-                if (!Database.Exists(databaseName))
-                {
-                //    var atsObject = new EtlTypeBuilder(exObj.WorkSheet, exObj.ColumnName);
-                }
-            }
+
             //create database from class object
             var config = new Configuration();
             //get data to import to database

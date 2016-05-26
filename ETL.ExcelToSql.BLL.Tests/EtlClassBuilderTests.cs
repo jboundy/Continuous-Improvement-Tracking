@@ -96,6 +96,16 @@ namespace ETL.ExcelToSql.BLL.Tests
             CreatePropertyMock();
         }
 
+        [TestMethod]
+        public void CanCreatePropertyIntegration()
+        {
+            var builder = new EtlClassBuilder("AssemblyName", "MainModule");
+            var tb = builder.GetTypeBuilder();
+            Type customType = Type.GetType("System.String", true);
+            builder.CreateProperty(tb, "Name", customType);
+            tb.Should().NotBeNull();
+        }
+
 #endregion
 
         private TypeBuilder GetTypeBuilderMock()

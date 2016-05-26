@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using ETL.ExcelToSql.ImportTool.Models;
+using ETL.ExcelToSql.DAL.Models;
 using OfficeOpenXml;
+using ExcelModel = ETL.ExcelToSql.ImportTool.Models.ExcelModel;
 
 namespace ETL.ExcelToSql.ImportTool.Helpers
 {
@@ -39,6 +40,16 @@ namespace ETL.ExcelToSql.ImportTool.Helpers
                 list.Add(model);
             }
             return list;
+        }
+
+        public Dictionary<string,Type> GetTypesFromExcel(IEnumerable<ExcelModel> models)
+        {
+            
+        }
+
+        public List<DynamicModel> MapToDynamicModels(Dictionary<string, Type> dict)
+        {
+            
         }
 
         private static IEnumerable<DataTable> ConvertToDataTables(ExcelWorksheets worksheets)

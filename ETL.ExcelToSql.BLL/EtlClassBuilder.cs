@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.InteropServices;
 using ETL.ExcelToSql.DAL.Models;
 
 namespace ETL.ExcelToSql.BLL
@@ -16,11 +17,10 @@ namespace ETL.ExcelToSql.BLL
         {
             _assemblyName = assemblyName;
             _mainModule = mainModule;
-            //CreateNewClass();
         }
 
        //need to write tests to and mock out classes
-        private void CreateNewObject(List<DynamicModel> fields)
+        public void CreateNewClass(List<DynamicModel> fields)
         {
             var modelType = CompileResultType(fields);
             Activator.CreateInstance(modelType);
