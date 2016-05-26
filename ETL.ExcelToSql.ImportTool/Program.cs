@@ -18,7 +18,7 @@ namespace ETL.ExcelToSql.ImportTool
             {
                 //if (!Database.Exists(exObj))
                 //{
-                //    var atsObject = new AtsTypeBuilder(exObj.WorkSheet, exObj.ColumnName);
+                //    var atsObject = new EtlTypeBuilder(exObj.WorkSheet, exObj.ColumnName);
                 //}
             }
             //create database from class object
