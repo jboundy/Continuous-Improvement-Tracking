@@ -21,8 +21,8 @@ namespace ETL.ExcelToSql.ImportTool
             var excelHelper = new ExcelHelpers(input);
             //grab headers from excel
             var excelObjects = excelHelper.GetHeadersFromExcel();
-            var dictionaryObjects = excelHelper.GetTypesFromExcel(excelObjects);
-            var mapTypes = excelHelper.MapToDynamicModels(dictionaryObjects);
+            var setTypes = excelHelper.SetTypesFromInput(excelObjects);
+            var mapTypes = excelHelper.MapToDynamicModels(setTypes);
 
             //use headers to create the custom concrete type using the dynamic model with private properties
 

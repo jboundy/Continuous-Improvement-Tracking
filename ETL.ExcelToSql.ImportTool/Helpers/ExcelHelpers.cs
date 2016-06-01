@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using ETL.ExcelToSql.DAL.Models;
+using ETL.ExcelToSql.ImportTool.Models;
 using OfficeOpenXml;
 using ExcelModel = ETL.ExcelToSql.ImportTool.Models.ExcelModel;
 
@@ -42,14 +44,67 @@ namespace ETL.ExcelToSql.ImportTool.Helpers
             return list;
         }
 
-        public Dictionary<string,Type> GetTypesFromExcel(IEnumerable<ExcelModel> models)
+        //todo: need to seperate function...probably move the enumeration to its own method
+        public Dictionary<string,Type> SetTypesFromInput(IEnumerable<ExcelModel> models)
         {
-            
+            Dictionary<string, Type> dict = new Dictionary<string, Type>();
+            int count = 1;
+            var arrayModels = models.ToArray();
+            Console.Write("Below are the available types for a column");
+            foreach (DataTypes type in Enum.GetValues(typeof(DataTypes)))
+            {
+                Console.WriteLine($"{count} {type}");
+                count++;
+            }
+            for (int i = 0; i < arrayModels.Length; i++)
+            {
+                var header = arrayModels[i].Header[i];
+                Console.WriteLine($"Please choose type for {header}");
+                var input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        dict.Add(header.ToString(), typeof(String));
+                        break;
+                    case "2":
+                        dict.Add(header.ToString(), typeof(Int32));
+                        break;
+                    case "3":
+                        dict.Add(header.ToString(), typeof(Boolean));
+                        break;
+                    case "4":
+                        dict.Add(header.ToString(), typeof(Decimal));
+                        break;
+                    case "5":
+                        dict.Add(header.ToString(), typeof(float));
+                        break;
+                    case "6":
+                        dict.Add(header.ToString(), typeof(CurrencyWrapper));
+                        break;
+                    case "7":
+                        dict.Add(header.ToString(), typeof(DateTime));
+                        break;
+                }
+            }
+
+            return dict;
         }
+
 
         public List<DynamicModel> MapToDynamicModels(Dictionary<string, Type> dict)
         {
-            
+            List<DynamicModel> list = new List<DynamicModel>();
+            foreach (var item in dict)
+            {
+                var dm = new DynamicModel
+                {
+                    FieldName = item.Key,
+                    FieldType = item.Value
+                };
+
+                list.Add(dm);
+            }
+            return list;
         }
 
         private static IEnumerable<DataTable> ConvertToDataTables(ExcelWorksheets worksheets)

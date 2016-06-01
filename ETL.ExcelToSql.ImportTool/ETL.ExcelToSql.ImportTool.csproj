@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DataTypes.cs" />
     <Compile Include="Models\ExcelModel.cs" />
     <Compile Include="Helpers\ExcelHelpers.cs" />
     <Compile Include="Helpers\GenericHelpers.cs" />

@@ -10,5 +10,6 @@ namespace ETL.ExcelToSql.DAL.Models
     {
         public string Worksheet { get; set; }
         public object[] Header { get; set; }
+        public Type Type { get; set; }
     }
 }
