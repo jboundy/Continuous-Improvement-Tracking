@@ -20,10 +20,12 @@ namespace ETL.ExcelToSql.BLL
         }
 
        //need to write tests to and mock out classes
-        public void CreateNewClass(List<DynamicModel> fields)
+        public List<object> CreateNewClass(List<DynamicModel> fields)
         {
+            var list = new List<object>();
             var modelType = CompileResultType(fields);
-            Activator.CreateInstance(modelType);
+            list.Add(Activator.CreateInstance(modelType));
+            return list;
         }
 
         public Type CompileResultType(List<DynamicModel> fields)
@@ -34,7 +36,7 @@ namespace ETL.ExcelToSql.BLL
                                             MethodAttributes.RTSpecialName);
             foreach (var field in fields)
             {
-                CreateProperty(tb, field.FieldName, field.FieldType);
+                //CreateProperty(tb, field.FieldName, field.FieldType);
             }
 
             Type objecType = tb.CreateType();

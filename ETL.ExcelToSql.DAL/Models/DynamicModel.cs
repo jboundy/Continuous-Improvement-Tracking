@@ -6,6 +6,5 @@ namespace ETL.ExcelToSql.DAL.Models
     {
         public string FieldName { get; set; }
         public Type FieldType { get; set; }
-
     }
 }

@@ -1,24 +1,19 @@
 ﻿using System;
-using ETL.ExcelToSql.DAL.Models;
-using OfficeOpenXml;
+using ETL.ExcelToSql.ImportTool.Models;
 
 namespace ETL.ExcelToSql.ImportTool.Helpers
 {
     public static class GenericHelpers
     {
-        public static DynamicModel CreateObjectFromExcel(ExcelRow row, ExcelWorksheet worksheet)
+        public static void DisplayTypesOnConsole()
         {
-            var doc = new DynamicModel();
+            int count = 1;
+            Console.WriteLine("Below are the available types for a column");
+            foreach (DataTypes type in Enum.GetValues(typeof(DataTypes)))
             {
-
-            };
-
-            return doc;
-        }
-
-        private static int ToInt(this object value)
-        {
-            return Convert.ToInt32(value);
+                Console.WriteLine($"{count} {type}");
+                count++;
+            }
         }
     }
 }

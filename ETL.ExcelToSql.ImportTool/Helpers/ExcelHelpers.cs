@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using ETL.ExcelToSql.DAL.Models;
-using ETL.ExcelToSql.ImportTool.Models;
 using OfficeOpenXml;
 using ExcelModel = ETL.ExcelToSql.ImportTool.Models.ExcelModel;
 
@@ -44,65 +43,71 @@ namespace ETL.ExcelToSql.ImportTool.Helpers
             return list;
         }
 
-        //todo: need to seperate function...probably move the enumeration to its own method
-        public Dictionary<string,Type> SetTypesFromInput(IEnumerable<ExcelModel> models)
-        {
-            Dictionary<string, Type> dict = new Dictionary<string, Type>();
-            int count = 1;
-            var arrayModels = models.ToArray();
-            Console.Write("Below are the available types for a column");
-            foreach (DataTypes type in Enum.GetValues(typeof(DataTypes)))
-            {
-                Console.WriteLine($"{count} {type}");
-                count++;
-            }
-            for (int i = 0; i < arrayModels.Length; i++)
-            {
-                var header = arrayModels[i].Header[i];
-                Console.WriteLine($"Please choose type for {header}");
-                var input = Console.ReadLine();
-                switch (input)
-                {
-                    case "1":
-                        dict.Add(header.ToString(), typeof(String));
-                        break;
-                    case "2":
-                        dict.Add(header.ToString(), typeof(Int32));
-                        break;
-                    case "3":
-                        dict.Add(header.ToString(), typeof(Boolean));
-                        break;
-                    case "4":
-                        dict.Add(header.ToString(), typeof(Decimal));
-                        break;
-                    case "5":
-                        dict.Add(header.ToString(), typeof(float));
-                        break;
-                    case "6":
-                        dict.Add(header.ToString(), typeof(CurrencyWrapper));
-                        break;
-                    case "7":
-                        dict.Add(header.ToString(), typeof(DateTime));
-                        break;
-                }
-            }
-
-            return dict;
-        }
-
-
-        public List<DynamicModel> MapToDynamicModels(Dictionary<string, Type> dict)
+        //todo: need to unflatten the list so that lits of fields return for each class to create based on table
+        public List<DynamicModel> SetTypesFromInput(IEnumerable<ExcelModel> models)
         {
             List<DynamicModel> list = new List<DynamicModel>();
-            foreach (var item in dict)
+            foreach (var model in models)
             {
-                var dm = new DynamicModel
+                foreach (var h in model.Header)
                 {
-                    FieldName = item.Key,
-                    FieldType = item.Value
-                };
+                    var header = h.ToString();
+                    Console.WriteLine($"Please choose type for {header}");
+                    var input = Console.ReadLine();
+                    switch (input)
+                    {
+                        case "1":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(string)
+                            });
+                            break;
+                        case "2":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(int)
+                            });
+                            break;
+                        case "3":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(bool)
+                            });
+                            break;
+                        case "4":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(decimal)
+                            });
+                            break;
+                        case "5":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(float)
+                            });
+                            break;
+                        case "6":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(CurrencyWrapper)
+                            });
+                            break;
+                        case "7":
+                            list.Add(new DynamicModel
+                            {
+                                FieldName = header,
+                                FieldType = typeof(DateTime)
+                            });
+                            break;
+                    }
+                }
 
-                list.Add(dm);
             }
             return list;
         }
@@ -132,21 +137,10 @@ namespace ETL.ExcelToSql.ImportTool.Helpers
             return dataTable;
         }
 
-        public IEnumerable<T> GetDataFromExcel<T>()
+        public IEnumerable<DataTable> GetDataFromExcel()
         {
-            List<T> list = new List<T>();
-            foreach (var worksheet in _excelWorksheets)
-            {
-                var lastRow = worksheet.Dimension.End.Row;
-            }
-           
-            //for (int i = 2; i <= lastRow; i++)
-            //{
-            //    var document = CIDocumentHelpers.CreateDocumentFromExcel(worksheet.Row(i), worksheet);
-            //    list.Add(document);
-            //}
-
-            return list;
+            var dataTable = ConvertToDataTables(_excelWorksheets);
+            return dataTable;
         }
 
         public void Dispose()
